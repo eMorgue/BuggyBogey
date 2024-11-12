@@ -1,4 +1,4 @@
-const socket = new WebSocket("ws://10.100.32.231:8080");
+const socket = new WebSocket("ws://172.20.10.3:8080");
 
 document.addEventListener('DOMContentLoaded', () => {
     const aimDiv = document.getElementById('aim');
