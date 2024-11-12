@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     aimHammer.on('panmove', (event) => {
         const deltaX = event.center.x - startX;
         const distancePercent = Math.min(Math.max((deltaX / screenWidth) * 100, -100), 100);
-        aimOutput.textContent = `Aim Distance: ${Math.round(distancePercent)}`;
-        sendToServer(`Shoot Distance: ${Math.round(distancePercent)}`);
+        aimOutput.textContent = `Aim Distance: ${Math.round((distancePercent + Number.EPSILON) * 10000) / 10000}`;
+        sendToServer(`AimDistance:${Math.round((distancePercent + Number.EPSILON) * 10000) / 10000}`);
     });
     
     aimHammer.on('panend', () => {
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const deltaY = event.center.y - startY;
         const distancePercent = Math.min(Math.max((deltaY / screenHeight) * 100, -100), 100);
         shootOutput.textContent = `Shoot Distance: ${Math.round(distancePercent)}`;
-        sendToServer(`Shoot Distance: ${Math.round(distancePercent)}`);
+        sendToServer(`ShootDistance:${Math.round(distancePercent)}`);
     });
 
     shootHammer.on('panend', () => {
