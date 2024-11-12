@@ -1,0 +1,30 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+#aim, #shoot {
+    width: 100%;
+    display: block;
+}
+
+#aim {
+    height: 50%;
+    background-color:aqua;
+}
+
+#shoot {
+    height: 50%;
+    background-color: azure;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 50%;
+    border: none;
+}
